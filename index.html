@@ -3,115 +3,137 @@
 <style>
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
         margin: 0;
         padding: 20px;
         min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-
+    
     .container {
         max-width: 800px;
         margin: 0 auto;
         background: white;
         padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     }
-
+    
     h1 {
         text-align: center;
-        color: #2c3e50;
+        color: #34495e;
         margin-bottom: 30px;
+        font-size: 2rem;
+        letter-spacing: 1px;
     }
-
+    
     .form-group {
         margin-bottom: 20px;
     }
-
+    
     label {
         display: block;
         margin-bottom: 5px;
-        color: #34495e;
+        color: #2c3e50;
         font-weight: bold;
+        font-size: 1rem;
     }
-
+    
     input[type="text"],
     input[type="email"],
     input[type="tel"],
     select,
     textarea {
         width: 100%;
-        padding: 10px;
+        padding: 12px;
         border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 16px;
+        border-radius: 8px;
+        font-size: 1rem;
         transition: border-color 0.3s ease;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
     }
-
+    
     input[type="text"]:focus,
     input[type="email"]:focus,
     input[type="tel"]:focus,
     select:focus,
     textarea:focus {
-        border-color: #3498db;
+        border-color: #6c5ce7;
         outline: none;
+        box-shadow: 0 0 5px rgba(108, 92, 231, 0.5);
     }
-
+    
     button {
-        background: #3498db;
+        background: linear-gradient(45deg, #6c5ce7, #0984e3);
         color: white;
         padding: 12px 30px;
         border: none;
-        border-radius: 5px;
+        border-radius: 25px;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 1rem;
+        font-weight: bold;
         display: block;
         margin: 20px auto;
-        transition: background 0.3s ease;
+        transition: background 0.3s ease, transform 0.2s ease;
+        text-transform: uppercase;
     }
-
+    
     button:hover {
-        background: #2980b9;
+        background: linear-gradient(45deg, #0984e3, #6c5ce7);
+        transform: scale(1.05);
     }
-
+    
+    button:active {
+        transform: scale(0.95);
+    }
+    
+    #error {
+        color: #e74c3c;
+        margin: 10px 0;
+        font-size: 0.9rem;
+    }
+    
     #formResult {
         display: none;
         margin-top: 30px;
         padding: 20px;
-        border-radius: 5px;
+        border-radius: 10px;
         background: #f8f9fa;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
-
+    
     .success-message {
         color: #2ecc71;
         text-align: center;
         margin-bottom: 20px;
+        font-size: 1.2rem;
     }
-
+    
     .submitted-data {
         background: #fff;
         padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
-
+    
     .submitted-data p {
         margin: 10px 0;
-        color: #2c3e50;
+        color: #34495e;
+        font-size: 1rem;
     }
-
+    
     .error {
         border-color: #e74c3c !important;
+        box-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
     }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+    textarea {
+        max-height: 120px;
+        overflow-y: auto;
+        resize: vertical; /* Optional: Allows users to manually resize if needed */
     }
-
-    .fade-in {
-        animation: fadeIn 0.5s ease-out;
-    }
+    
 </style>
 </head>
 <body>
@@ -138,9 +160,9 @@
                 <select id="course" name="course" required>
                     <option value="">Select a course</option>
                     <option value="web-development">Web Development</option>
-                    <option value="data-science">Data Science</option>
+                    <option value="data-analytics">Data Analytics</option>
                     <option value="mobile-dev">Mobile Development</option>
-                    <option value="cloud-computing">Cloud Computing</option>
+                    <option value="ai-ml">AI ML</option>
                 </select>
             </div>
 
